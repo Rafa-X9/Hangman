@@ -22,7 +22,8 @@ namespace Hangman
                 while (!game.GameEnded())
                 {
                     Console.WriteLine("GAME " + q);
-                    //Console.WriteLine("Word = " + game.Word); //retirar!!!
+                    Console.WriteLine("Word = " + game.Word); //retirar!!!
+                    Console.WriteLine("Score: " + game.Score + "/" + game.MaxScore); //retirar
                     string manHanging = game.ManHanging();
                     Console.WriteLine(manHanging);
 
@@ -38,21 +39,10 @@ namespace Hangman
                     }
                     int score = game.Score;
 
-                    if (game.MaxScore == game.Word.Length)
-                    {
-                        if (game.Score < game.MaxScore)
-                        {
-                            Console.WriteLine();
-                            Console.Write("Your guess: ");
-                            guess = char.Parse(Console.ReadLine());
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine();
-                        Console.Write("Your guess: ");
-                        guess = char.Parse(Console.ReadLine());
-                    }
+                    Console.WriteLine();
+                    Console.Write("Your guess: ");
+                    guess = char.Parse(Console.ReadLine());
+                    game.AddScore(guess);
 
                     turn++;
                     if (game.Score < game.MaxScore)
@@ -61,9 +51,23 @@ namespace Hangman
                     }
                 }
 
+                Console.Clear();
+                Console.WriteLine("GAME " + q);
+                Console.WriteLine("Word = " + game.Word); //retirar!!!
+                Console.WriteLine("Score: " + game.Score + "/" + game.MaxScore); //retirar
+                string manHangingg = game.ManHanging();
+                Console.WriteLine(manHangingg);
+                Console.WriteLine();
+                Console.Write("Word: ");
+                foreach (char c in game.Word)
+                {
+                    Console.Write(c + " ");
+                }
+                Console.WriteLine();
+
                 if (game.Score == game.MaxScore)
                 {
-                    Console.WriteLine("You won! :D");
+                    Console.WriteLine("You won!! :D");
                 }
                 q++;
                 Console.Write("Play again? (y/n): ");

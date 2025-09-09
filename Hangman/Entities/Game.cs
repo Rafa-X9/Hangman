@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -583,8 +584,7 @@ namespace Hangman.Entities
             };
             Random random = new Random();
             int x = random.Next(0, 560);
-            //Word = possibleWords[x];
-            Word = "vanilla";
+            Word = possibleWords[x];
 
             List<char> wordLetters = new List<char>();
             foreach (char let in Word)
@@ -668,15 +668,27 @@ namespace Hangman.Entities
             }
         }
 
-        public string Guess(char letter)
+        public void AddScore(char letter)
         {
-            StringBuilder s = new StringBuilder();
-
             char repetition = GuessedLetters.Find(let => let == letter);
             if (repetition == '\0')
             {
                 GuessedLetters.Add(letter);
+                bool addScore = false;
+                foreach (char c in Word)
+                {
+                    if (c == letter && addScore == false)
+                    {
+                        Score++;
+                        addScore = true;
+                    }
+                }
             }
+        }
+
+        public string Guess(char letter)
+        {
+            StringBuilder s = new StringBuilder();
 
             foreach (char l in Word)
             {
@@ -684,10 +696,6 @@ namespace Hangman.Entities
                 if (exists != '\0')
                 {
                     s.Append(exists + " ");
-                    if (exists == letter && repetition == '\0')
-                    {
-                        Score++;
-                    }
                 }
                 else
                 {
