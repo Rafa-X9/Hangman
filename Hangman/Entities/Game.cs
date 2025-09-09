@@ -15,7 +15,7 @@ namespace Hangman.Entities
         public int WordLength { get; private set; }
         public int Tries { get; set; }
         public List<char> GuessedLetters = new List<char>();
-
+        public List<char> GuessedLettersAlphabetic = new List<char>();
         public Game()
         {
             string[] possibleWords = new string[]
@@ -668,7 +668,13 @@ namespace Hangman.Entities
             }
         }
 
-        
+        public bool GuessHasBeenGuessed(char guess)
+        {
+            char c = GuessedLetters.Find(let => let == guess);
+            return c != '\0';
+        }
+
+       
 
         public void AddScore(char letter)
         {
@@ -684,6 +690,14 @@ namespace Hangman.Entities
                         Score++;
                         addScore = true;
                     }
+                }
+                foreach (char c in GuessedLetters)
+                {
+                    GuessedLettersAlphabetic.Remove(c);
+                }
+                foreach (char c in GuessedLetters)
+                {
+                    GuessedLettersAlphabetic.Add(c);
                 }
             }
             if (!addScore)

@@ -1,5 +1,7 @@
 ﻿using Hangman.Entities;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Hangman
 {
@@ -40,8 +42,50 @@ namespace Hangman
                     int score = game.Score;
 
                     Console.WriteLine();
+                    Console.Write("Letters guessed: ");
+                    game.GuessedLettersAlphabetic.Sort();
+                    foreach (char c in game.GuessedLettersAlphabetic)
+                    {
+                        Console.Write(c + " ");
+                    }
+                    Console.WriteLine();
+                    Console.WriteLine();
                     Console.Write("Your guess: ");
                     guess = char.Parse(Console.ReadLine());
+                    if (game.GuessHasBeenGuessed(guess))
+                    {
+                        do
+                        {
+                            Console.Clear();
+                            Console.WriteLine("GAME " + q);
+                            Console.WriteLine("Word = " + game.Word); //retirar!!!
+                            Console.WriteLine("Score: " + game.Score + "/" + game.MaxScore); //retirar
+                            Console.WriteLine(manHanging);
+
+                            Console.WriteLine();
+                            Console.Write("Word: ");
+                            if (turn == 1)
+                            {
+                                Console.WriteLine(game.Guess());
+                            }
+                            else
+                            {
+                                Console.WriteLine(game.Guess(guess));
+                            }
+                            Console.WriteLine();
+                            Console.Write("Letters guessed: ");
+                            game.GuessedLettersAlphabetic.Sort();
+                            foreach (char c in game.GuessedLettersAlphabetic)
+                            {
+                                Console.Write(c + " ");
+                            }
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine("This letter has been guessed already!");
+                            Console.Write("Your guess: ");
+                            guess = char.Parse(Console.ReadLine());
+                        } while (game.GuessHasBeenGuessed(guess));
+                    }
                     game.AddScore(guess);
 
                     turn++;
@@ -66,6 +110,15 @@ namespace Hangman
                         Console.Write(c + " ");
                     }
                     Console.WriteLine();
+                    Console.WriteLine();
+                    Console.Write("Letters guessed: ");
+                    game.GuessedLettersAlphabetic.Sort();
+                    foreach (char c in game.GuessedLettersAlphabetic)
+                    {
+                        Console.Write(c + " ");
+                    }
+                    Console.WriteLine();
+                    Console.WriteLine();
                     Console.WriteLine("You won!! :D");
                 }
                 else
@@ -85,7 +138,7 @@ namespace Hangman
                     }
                     Console.WriteLine();
                 }
-                    q++;
+                q++;
                 Console.Write("Play again? (y/n): ");
                 answer = char.Parse(Console.ReadLine());
             } while (answer == 'y');
