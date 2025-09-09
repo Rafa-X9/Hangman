@@ -612,7 +612,7 @@ namespace Hangman.Entities
                     + "\n|     O"
                     + "\n|    /|\\"
                     + "\n|    / \\"
-                    + "\n|_ _ _ _ _ _";
+                    + "\n|_ _ _ ";
                     break;
                 case 1:
                     return "— — — —"
@@ -620,7 +620,7 @@ namespace Hangman.Entities
                     + "\n|     O"
                     + "\n|    /|\\"
                     + "\n|    / "
-                    + "\n|_ _ _ _ ";
+                    + "\n|_ _ _  ";
                     break;
                 case 2:
                     return "— — — —"
@@ -628,7 +628,7 @@ namespace Hangman.Entities
                     + "\n|     O"
                     + "\n|    /|\\"
                     + "\n|     "
-                    + "\n|_ _ _ _ ";
+                    + "\n|_ _ _ ";
                     break;
                 case 3:
                     return "— — — —"
@@ -636,7 +636,7 @@ namespace Hangman.Entities
                     + "\n|     O"
                     + "\n|    /|"
                     + "\n|     "
-                    + "\n|_ _ _ _ ";
+                    + "\n|_ _ _  ";
                     break;
                 case 4:
                     return "— — — —"
@@ -644,7 +644,7 @@ namespace Hangman.Entities
                     + "\n|     O"
                     + "\n|     |"
                     + "\n|     "
-                    + "\n|_ _ _ _";
+                    + "\n|_ _ _ ";
                     break;
                 case 5:
                     return "— — — —"
@@ -652,7 +652,7 @@ namespace Hangman.Entities
                     + "\n|     O"
                     + "\n|     "
                     + "\n|     "
-                    + "\n|_ _ _ _";
+                    + "\n|_ _ _ ";
                     break;
                 case 6:
                     return "— — — —"
@@ -660,7 +660,7 @@ namespace Hangman.Entities
                     + "\n|     "
                     + "\n|     "
                     + "\n|     "
-                    + "\n|_ _ _ _";
+                    + "\n|_ _ _ ";
                     break;
                 default:
                     return "Tries is invalid, jisdhfidshfk";

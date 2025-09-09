@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Lenovo\\Desktop\\Rafael\\projetosCsharp\\RoletaRussa\\Hangman\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B0753F7B-6F10-493D-AB74-A78881F998D6}|Hangman\\Hangman.csproj|c:\\users\\lenovo\\desktop\\rafael\\projetoscsharp\\roletarussa\\hangman\\hangman\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B0753F7B-6F10-493D-AB74-A78881F998D6}|Hangman\\Hangman.csproj|solutionrelative:hangman\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B0753F7B-6F10-493D-AB74-A78881F998D6}|Hangman\\Hangman.csproj|c:\\users\\lenovo\\desktop\\rafael\\projetoscsharp\\roletarussa\\hangman\\hangman\\entities\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B0753F7B-6F10-493D-AB74-A78881F998D6}|Hangman\\Hangman.csproj|solutionrelative:hangman\\entities\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0753F7B-6F10-493D-AB74-A78881F998D6}|Hangman\\Hangman.csproj|c:\\users\\lenovo\\desktop\\rafael\\projetoscsharp\\roletarussa\\hangman\\hangman\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0753F7B-6F10-493D-AB74-A78881F998D6}|Hangman\\Hangman.csproj|solutionrelative:hangman\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,30 +18,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Game.cs",
               "DocumentMoniker": "C:\\Users\\Lenovo\\Desktop\\Rafael\\projetosCsharp\\RoletaRussa\\Hangman\\Hangman\\Entities\\Game.cs",
               "RelativeDocumentMoniker": "Hangman\\Entities\\Game.cs",
               "ToolTip": "C:\\Users\\Lenovo\\Desktop\\Rafael\\projetosCsharp\\RoletaRussa\\Hangman\\Hangman\\Entities\\Game.cs",
               "RelativeToolTip": "Hangman\\Entities\\Game.cs",
-              "ViewState": "AgIAAK8CAAAAAAAAAAAIwLsCAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAJQCAAAAAAAAAAAwwJYCAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-06T00:08:12.985Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Lenovo\\Desktop\\Rafael\\projetosCsharp\\RoletaRussa\\Hangman\\Hangman\\Program.cs",
               "RelativeDocumentMoniker": "Hangman\\Program.cs",
               "ToolTip": "C:\\Users\\Lenovo\\Desktop\\Rafael\\projetosCsharp\\RoletaRussa\\Hangman\\Hangman\\Program.cs",
               "RelativeToolTip": "Hangman\\Program.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAewDgAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHwAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-06T00:07:05.742Z",
               "EditorCaption": ""
