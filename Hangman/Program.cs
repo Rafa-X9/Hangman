@@ -51,28 +51,49 @@ namespace Hangman
                     }
                 }
 
-                Console.Clear();
-                Console.WriteLine("GAME " + q);
-                Console.WriteLine("Word = " + game.Word); //retirar!!!
-                Console.WriteLine("Score: " + game.Score + "/" + game.MaxScore); //retirar
-                string manHangingg = game.ManHanging();
-                Console.WriteLine(manHangingg);
-                Console.WriteLine();
-                Console.Write("Word: ");
-                foreach (char c in game.Word)
-                {
-                    Console.Write(c + " ");
-                }
-                Console.WriteLine();
-
                 if (game.Score == game.MaxScore)
                 {
+                    Console.Clear();
+                    Console.WriteLine("GAME " + q);
+                    Console.WriteLine("Word = " + game.Word); //retirar!!!
+                    Console.WriteLine("Score: " + game.Score + "/" + game.MaxScore); //retirar
+                    string manHangingg = game.ManHanging();
+                    Console.WriteLine(manHangingg);
+                    Console.WriteLine();
+                    Console.Write("Word: ");
+                    foreach (char c in game.Word)
+                    {
+                        Console.Write(c + " ");
+                    }
+                    Console.WriteLine();
                     Console.WriteLine("You won!! :D");
                 }
-                q++;
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("GAME " + q);
+                    Console.WriteLine("Word = " + game.Word); //retirar!!!
+                    Console.WriteLine("Score: " + game.Score + "/" + game.MaxScore); //retirar
+                    string manHangingg = game.ManHanging();
+                    Console.WriteLine(manHangingg);
+                    Console.WriteLine();
+                    Console.WriteLine("You lost... :(");
+                    Console.Write("The word was: ");
+                    foreach (char c in game.Word)
+                    {
+                        Console.Write(c);
+                    }
+                    Console.WriteLine();
+                }
+                    q++;
                 Console.Write("Play again? (y/n): ");
                 answer = char.Parse(Console.ReadLine());
             } while (answer == 'y');
+
+            Console.WriteLine();
+            Console.WriteLine("Thanks for playing! :3");
+            Console.WriteLine("This game is fully open source btw, find it at");
+            Console.WriteLine("https://github.com/Rafa-X9/Hangman");
         }
     }
 }
