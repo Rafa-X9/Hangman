@@ -735,6 +735,8 @@ namespace Hangman.Entities
             return s.ToString();
         }
 
+        
+
         public bool GameEnded()
         {
             return (Tries == 0 || Score == MaxScore);

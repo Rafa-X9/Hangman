@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lenovo\\Desktop\\Rafael\\projetosCsharp\\RoletaRussa\\Hangman\\Hangman\\Hangman.csproj",
+      "projectUniqueName": "C:\\Users\\Lenovo\\Desktop\\Rafael\\projetosCsharp\\MaisProjetos\\Hangman\\Hangman\\Hangman.csproj",
       "projectName": "Hangman",
-      "projectPath": "C:\\Users\\Lenovo\\Desktop\\Rafael\\projetosCsharp\\RoletaRussa\\Hangman\\Hangman\\Hangman.csproj",
+      "projectPath": "C:\\Users\\Lenovo\\Desktop\\Rafael\\projetosCsharp\\MaisProjetos\\Hangman\\Hangman\\Hangman.csproj",
       "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lenovo\\Desktop\\Rafael\\projetosCsharp\\RoletaRussa\\Hangman\\Hangman\\obj\\",
+      "outputPath": "C:\\Users\\Lenovo\\Desktop\\Rafael\\projetosCsharp\\MaisProjetos\\Hangman\\Hangman\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
