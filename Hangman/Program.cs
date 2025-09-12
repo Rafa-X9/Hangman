@@ -56,71 +56,77 @@ namespace Hangman
                     guess = char.Parse(Console.ReadLine());
                     guess = GuessToLower(guess);
 
-                    if (!IsALetter(guess))
+                    if (IsALetter(guess) == false || game.GuessHasBeenGuessed(guess))
                     {
                         do
                         {
-                            Console.Clear();
-                            Console.WriteLine("GAME " + q);
-                            Console.WriteLine(manHanging);
+                            if (IsALetter(guess) == false)
+                            {
+                                do
+                                {
+                                    Console.Clear();
+                                    Console.WriteLine("GAME " + q);
+                                    Console.WriteLine(manHanging);
 
-                            Console.WriteLine();
-                            Console.Write("Word: ");
-                            if (turn == 1)
-                            {
-                                Console.WriteLine(game.Guess());
+                                    Console.WriteLine();
+                                    Console.Write("Word: ");
+                                    if (turn == 1)
+                                    {
+                                        Console.WriteLine(game.Guess());
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine(game.Guess(guess));
+                                    }
+                                    Console.WriteLine();
+                                    Console.Write("Letters guessed: ");
+                                    game.GuessedLettersAlphabetic.Sort();
+                                    foreach (char c in game.GuessedLettersAlphabetic)
+                                    {
+                                        Console.Write(c + " ");
+                                    }
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("Invalid character!");
+                                    Console.Write("Your guess: ");
+                                    guess = char.Parse(Console.ReadLine());
+                                } while (!IsALetter(guess));
                             }
-                            else
+                            else if (game.GuessHasBeenGuessed(guess))
                             {
-                                Console.WriteLine(game.Guess(guess));
+                                do
+                                {
+                                    Console.Clear();
+                                    Console.WriteLine("GAME " + q);
+                                    Console.WriteLine(manHanging);
+
+                                    Console.WriteLine();
+                                    Console.Write("Word: ");
+                                    if (turn == 1)
+                                    {
+                                        Console.WriteLine(game.Guess());
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine(game.Guess(guess));
+                                    }
+                                    Console.WriteLine();
+                                    Console.Write("Letters guessed: ");
+                                    game.GuessedLettersAlphabetic.Sort();
+                                    foreach (char c in game.GuessedLettersAlphabetic)
+                                    {
+                                        Console.Write(c + " ");
+                                    }
+                                    Console.WriteLine();
+                                    Console.WriteLine();
+                                    Console.WriteLine("This letter has been guessed already!");
+                                    Console.Write("Your guess: ");
+                                    guess = char.Parse(Console.ReadLine());
+                                } while (game.GuessHasBeenGuessed(guess));
                             }
-                            Console.WriteLine();
-                            Console.Write("Letters guessed: ");
-                            game.GuessedLettersAlphabetic.Sort();
-                            foreach (char c in game.GuessedLettersAlphabetic)
-                            {
-                                Console.Write(c + " ");
-                            }
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine("Invalid character!");
-                            Console.Write("Your guess: ");
-                            guess = char.Parse(Console.ReadLine());
-                        } while (!IsALetter(guess));
+                        } while (IsALetter(guess) == false || game.GuessHasBeenGuessed(guess));
                     }
-
-                    if (game.GuessHasBeenGuessed(guess))
-                    {
-                        do
-                        {
-                            Console.Clear();
-                            Console.WriteLine("GAME " + q);
-                            Console.WriteLine(manHanging);
-
-                            Console.WriteLine();
-                            Console.Write("Word: ");
-                            if (turn == 1)
-                            {
-                                Console.WriteLine(game.Guess());
-                            }
-                            else
-                            {
-                                Console.WriteLine(game.Guess(guess));
-                            }
-                            Console.WriteLine();
-                            Console.Write("Letters guessed: ");
-                            game.GuessedLettersAlphabetic.Sort();
-                            foreach (char c in game.GuessedLettersAlphabetic)
-                            {
-                                Console.Write(c + " ");
-                            }
-                            Console.WriteLine();
-                            Console.WriteLine();
-                            Console.WriteLine("This letter has been guessed already!");
-                            Console.Write("Your guess: ");
-                            guess = char.Parse(Console.ReadLine());
-                        } while (game.GuessHasBeenGuessed(guess));
-                    }
+                    
                     game.AddScore(guess);
 
                     turn++;
@@ -188,32 +194,32 @@ namespace Hangman
         static char GuessToLower(char c)
         {
             if (c == 'A') { return 'a'; }
-            if (c == 'B') { return 'b'; }
-            if (c == 'C') { return 'c'; }
-            if (c == 'D') { return 'd'; }
-            if (c == 'E') { return 'e'; }
-            if (c == 'F') { return 'f'; }
-            if (c == 'G') { return 'g'; }
-            if (c == 'H') { return 'h'; }
-            if (c == 'I') { return 'i'; }
-            if (c == 'J') { return 'j'; }
-            if (c == 'K') { return 'k'; }
-            if (c == 'L') { return 'l'; }
-            if (c == 'M') { return 'm'; }
-            if (c == 'N') { return 'n'; }
-            if (c == 'O') { return 'o'; }
-            if (c == 'P') { return 'p'; }
-            if (c == 'Q') { return 'q'; }
-            if (c == 'R') { return 'r'; }
-            if (c == 'S') { return 's'; }
-            if (c == 'T') { return 't'; }
-            if (c == 'U') { return 'u'; }
-            if (c == 'V') { return 'v'; }
-            if (c == 'W') { return 'w'; }
-            if (c == 'X') { return 'x'; }
-            if (c == 'Y') { return 'y'; }
-            if (c == 'Z') { return 'z'; }
-            else { return '!'; }
+            else if (c == 'B') { return 'b'; }
+            else if (c == 'C') { return 'c'; }
+            else if (c == 'D') { return 'd'; }
+            else if (c == 'E') { return 'e'; }
+            else if (c == 'F') { return 'f'; }
+            else if (c == 'G') { return 'g'; }
+            else if (c == 'H') { return 'h'; }
+            else if (c == 'I') { return 'i'; }
+            else if (c == 'J') { return 'j'; }
+            else if (c == 'K') { return 'k'; }
+            else if (c == 'L') { return 'l'; }
+            else if (c == 'M') { return 'm'; }
+            else if (c == 'N') { return 'n'; }
+            else if (c == 'O') { return 'o'; }
+            else if (c == 'P') { return 'p'; }
+            else if (c == 'Q') { return 'q'; }
+            else if (c == 'R') { return 'r'; }
+            else if (c == 'S') { return 's'; }
+            else if (c == 'T') { return 't'; }
+            else if (c == 'U') { return 'u'; }
+            else if (c == 'V') { return 'v'; }
+            else if (c == 'W') { return 'w'; }
+            else if (c == 'X') { return 'x'; }
+            else if (c == 'Y') { return 'y'; }
+            else if (c == 'Z') { return 'z'; }
+            else { return c; }
         }
 
         static bool IsALetter(char c)
@@ -243,7 +249,33 @@ namespace Hangman
             c == 'w' ||
             c == 'x' ||
             c == 'y' ||
-            c == 'z';
+            c == 'z' ||
+            c == 'A' ||
+            c == 'B' ||
+            c == 'C' ||
+            c == 'D' ||
+            c == 'E' ||
+            c == 'F' ||
+            c == 'G' ||
+            c == 'H' ||
+            c == 'I' ||
+            c == 'J' ||
+            c == 'K' ||
+            c == 'L' ||
+            c == 'M' ||
+            c == 'N' ||
+            c == 'O' ||
+            c == 'P' ||
+            c == 'Q' ||
+            c == 'R' ||
+            c == 'S' ||
+            c == 'T' ||
+            c == 'U' ||
+            c == 'V' ||
+            c == 'W' ||
+            c == 'X' ||
+            c == 'Y' ||
+            c == 'Z';
         }
     }
 }
